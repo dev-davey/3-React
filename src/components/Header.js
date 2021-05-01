@@ -10,6 +10,7 @@ import {
   Form, FormGroup, Input, Label
 } from "reactstrap";
 import { NavLink } from "react-router-dom";
+import { FadeTransform } from 'react-animation-components'
 
 class Header extends Component {
   constructor(props) {
@@ -51,8 +52,14 @@ class Header extends Component {
           <div className="container">
             <div className="row">
               <div className="col">
+              <FadeTransform
+                in
+                transformProps={{
+                    exitTransform: 'scale(0.5) translateY(-50%)'
+                }}>
                 <h1>NuCamp</h1>
                 <h2>a better way to camp</h2>
+                </FadeTransform>
               </div>
             </div>
           </div>
@@ -60,6 +67,7 @@ class Header extends Component {
 
         <Navbar dark sticky="top" expand="md">
           <div className="container">
+  
             <NavbarBrand className="mr-auto" href="/">
               <img
                 src="/assets/images/logo.png"
